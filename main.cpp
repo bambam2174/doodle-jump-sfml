@@ -70,6 +70,19 @@ int main()
         }
         std::cout << "dy : " << dy << ", y : " << y << std::endl;
 
+        if (y < h)
+        {
+            y = h;
+            for (int i = 0; i < 10; i++)
+            {
+                platforms[i].y -= dy;
+                if (platforms[i].y > 533)
+                {
+                    platforms[i].y = 0;
+                    platforms[i].x = rand() % 400;
+                }
+            }
+        }
         for (int i = 0; i < 10; i++)
         {
             if (x + widthPlayer > platforms[i].x && x < platforms[i].x + widthPlatform &&
